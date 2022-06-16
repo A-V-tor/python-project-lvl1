@@ -8,3 +8,5 @@ publish: #публикация проекта без добавления в и�
 	poetry publish --dry-run
 package-install: #установка пакета
 	python3 -m pip install --user dist/*.whl
+lint: #запуск линтера
+	poetry run flake8 brain_games
