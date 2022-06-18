@@ -148,7 +148,10 @@ def logic_progression():
     count = 0
     while count != 3:
         lst, s = random_progression()
-        print(f'Question: {lst}')
+        stroc = ''
+        for i in lst:
+            stroc += str(i) + ','
+        print(f'Question: {stroc}')
         answer = prompt.string('Your answer: ')
 
         if answer == str(s):
