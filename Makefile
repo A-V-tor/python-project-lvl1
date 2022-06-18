@@ -1,5 +1,7 @@
 install: #установка   зависимостей
 	poetry install
+brain-games:
+	poetry run brain-games
 brain-even: #запуск умных игр
 	poetry run brain-even
 brain-calc: #запуск умных игр
