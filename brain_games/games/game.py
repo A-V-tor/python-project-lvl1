@@ -74,6 +74,16 @@ def random_progression():
     return lst, s
 
 
+def is_prime_numbers(num):
+    d = 2
+    while num % d != 0:
+        d += 1
+    if d == num:
+        return 'yes'
+    else:
+        return 'no'
+
+
 def logic_even():
     name = welcome_user()
     print('Answer "yes" if the number is even, otherwise answer "no".')
@@ -176,4 +186,27 @@ def logic_progression():
 Let\'s try again, {name}!"
             print(a)
             count = 3
-        victory(a, name)
+    victory(a, name)
+
+
+def brain_prime():
+    name = welcome_user()
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
+
+    count = 0
+    while count != 3:
+        num = random.randint(5, 133)
+        print(f'Question: {num}')
+        answer = prompt.string('Your answer: ')
+
+        if answer == is_prime_numbers(num):
+            a = 'Correct!'
+            print(a)
+            count += 1
+        else:
+            a = f"'{answer}' is wrong answer ;(.\
+Correct answer was '{is_prime_numbers(num)}'.\n\
+Let\'s try again, {name}!"
+            print(a)
+            count = 3
+    victory(a, name)
