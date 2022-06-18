@@ -1,6 +1,6 @@
 import prompt
 import random
-from functools import reduce
+from math import gcd
 
 
 def welcome_user():
@@ -27,35 +27,6 @@ def great_answer(num_1, num_2, operator):
     else:
         res = num_1 * num_2
         return res
-
-
-def find_common_divisor(a, b):
-    lst_a = []
-    lst_b = []
-    new_lst = []
-    d = 2
-    while d * d <= a:
-        if a % d == 0:
-            lst_a.append(d)
-            a //= d
-        else:
-            d += 1
-    if a > 1:
-        lst_a.append(a)
-    d = 2
-    while d * d <= b:
-        if b % d == 0:
-            lst_b.append(d)
-            b //= d
-        else:
-            d += 1
-    if b > 1:
-        lst_b.append(b)
-    res = lst_a if len(lst_a) < len(lst_b) else lst_b
-    for i in res:
-        if i in lst_a and i in lst_b:
-            new_lst.append(i)
-    return reduce(lambda x, y: x*y, new_lst)
 
 
 def random_progression():
@@ -157,13 +128,13 @@ def logic_gcd():
         print(f'Question: {num_1} {num_2}')
         answer = prompt.string('Your answer: ')
 
-        if answer == str(find_common_divisor(num_1, num_2)):
+        if answer == str(gcd(num_1, num_2)):
             a = 'Correct!'
             print(a)
             count += 1
         else:
             a = f"\'{answer}\' is wrong answer ;(.\
- Correct answer was '{find_common_divisor(num_1, num_2)}'.\
+ Correct answer was '{gcd(num_1, num_2)}'.\
 \nLet\'s try again, {name}!"
             print(a)
             count = 3
