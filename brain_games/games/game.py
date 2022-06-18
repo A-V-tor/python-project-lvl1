@@ -30,7 +30,7 @@ def great_answer(num_1, num_2, operator):
 
 
 def random_progression():
-    item = random.randint(1, 1618)
+    item = random.randint(1, 100)
     len_lst = random.randint(6, 11)
     lst = []
     for i in range(len_lst):
@@ -151,7 +151,7 @@ def logic_progression():
         stroc = ''
         for i in lst:
             stroc += str(i) + ','
-        print(f'Question: {stroc}')
+        print(f'Question: {stroc[:-1]}')
         answer = prompt.string('Your answer: ')
 
         if answer == str(s):
