@@ -150,7 +150,7 @@ def logic_progression():
         lst, s = random_progression()
         stroc = ''
         for i in lst:
-            stroc += str(i) + ','
+            stroc += str(i) + ' '
         print(f'Question: {stroc[:-1]}')
         answer = prompt.string('Your answer: ')
 
