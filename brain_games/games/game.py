@@ -14,7 +14,7 @@ def victory(a, name):
     if a == 'Correct!':
         return print(f'Congratulations, {name}! \n\n')
     else:
-        return print(f'\nGame over, {name}\n\n')
+        pass
 
 
 def great_answer(num_1, num_2, operator):
@@ -93,7 +93,7 @@ def logic_even():
         num = random.randint(0, 100)
         print(f'Question: {num}')
         answer = prompt.string('Your answer: ')
-
+        no_good = 'yes' if answer == 'no' else 'no'
         if num % 2 == 0 and answer == 'yes':
             a = 'Correct!'
             print(a)
@@ -103,7 +103,9 @@ def logic_even():
             print(a)
             count += 1
         else:
-            a = 'No correct'
+            a = f"'{answer}' is wrong answer ;(.\
+Correct answer was '{no_good}'"
+            print(a)
             count = 3
 
     victory(a, name)
