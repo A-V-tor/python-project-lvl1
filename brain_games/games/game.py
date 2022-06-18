@@ -104,7 +104,7 @@ def logic_even():
             count += 1
         else:
             a = f"'{answer}' is wrong answer ;(.\
-Correct answer was '{no_good}'"
+ Correct answer was '{no_good}'."
             print(a)
             count = 3
 
