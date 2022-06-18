@@ -104,7 +104,8 @@ def logic_even():
             count += 1
         else:
             a = f"'{answer}' is wrong answer ;(.\
- Correct answer was '{no_good}'."
+ Correct answer was '{no_good}'.\nLet\'s try\
+ again, {name}!"
             print(a)
             count = 3
 
@@ -162,7 +163,7 @@ def logic_gcd():
             count += 1
         else:
             a = f"\'{answer}\' is wrong answer ;(.\
-Correct answer was '{find_common_divisor(num_1, num_2)}'.\
+ Correct answer was '{find_common_divisor(num_1, num_2)}'.\
 \nLet\'s try again, {name}!"
             print(a)
             count = 3
