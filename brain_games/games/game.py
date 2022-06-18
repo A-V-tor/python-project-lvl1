@@ -58,6 +58,22 @@ def find_common_divisor(a, b):
     return reduce(lambda x, y: x*y, new_lst)
 
 
+def random_progression():
+    item = random.randint(1, 1618)
+    len_lst = random.randint(6, 11)
+    lst = []
+    for i in range(len_lst):
+        item += len_lst
+        lst.append(item)
+        s = random.choice(lst)
+    for i, v in enumerate(lst):
+        if v == s:
+            lst[i] = '..'
+        else:
+            pass
+    return lst, s
+
+
 def logic_even():
     name = welcome_user()
     print('Answer "yes" if the number is even, otherwise answer "no".')
@@ -139,3 +155,25 @@ Correct answer was '{find_common_divisor(num_1, num_2)}'.\
             print(a)
             count = 3
     victory(a, name)
+
+
+def logic_progression():
+    name = welcome_user()
+    print('What number is missing in the progression?')
+
+    count = 0
+    while count != 3:
+        lst, s = random_progression()
+        print(f'Question: {lst}')
+        answer = prompt.string('Your answer: ')
+
+        if answer == str(s):
+            a = 'Correct!'
+            print(a)
+            count += 1
+        else:
+            a = f"'{answer}' is wrong answer ;(. Correct answer was '{s}'.\n\
+Let\'s try again, {name}!"
+            print(a)
+            count = 3
+        victory(a, name)
